@@ -1,6 +1,10 @@
+"use client";
+
 import { useState, useEffect, useCallback } from "react";
 const useHash = () => {
-  const [hash, setHash] = useState(() => window.location.hash);
+  const [hash, setHash] = useState(() =>
+    typeof window !== "undefined" ? window?.location?.hash : ""
+  );
 
   const hashChangeHandler = useCallback(() => {
     setHash(window.location.hash);
@@ -15,7 +19,8 @@ const useHash = () => {
 
   const updateHash = useCallback(
     (newHash: string) => {
-      if (newHash !== hash) window.location.hash = newHash;
+      if (newHash !== hash && typeof window !== "undefined")
+        window.location.hash = newHash;
     },
     [hash]
   );

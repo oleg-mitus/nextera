@@ -2,7 +2,7 @@
 import ProjectsSlider from "@/components/projects/ProjectsSlider";
 import ProjectsParallax from "@/components/projects/ProjectsParallax";
 import ProjectsMobileParallax from "@/components/projects/ProjectsMobileParallax";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMediaQuery } from "usehooks-ts";
 import { projectsBlocks } from "@/data/projects";
 import { useEffect } from "react";
 import AOS from "aos";

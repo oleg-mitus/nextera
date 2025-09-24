@@ -3,13 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FC, useEffect, useState, useRef } from "react";
-import { useMediaQuery } from "@uidotdev/usehooks";
 import clsx from "clsx";
 
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef(null);
-  const isSmallDevice = useMediaQuery("only screen and (max-width : 1024px)");
 
   useEffect(() => {
     if (menuOpen) {
@@ -36,39 +34,37 @@ const Header: FC = () => {
     >
       <div className="flex justify-between items-center w-full">
         <Link href="/" aria-label="Home">
-          {isSmallDevice ? (
-            <Image
-              src="/logo-mob.png"
-              alt="Logo"
-              sizes="100vw"
-              width={60}
-              height={60}
-            />
-          ) : (
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              sizes="100vw"
-              width={240}
-              height={60}
-            />
-          )}
+          <Image
+            src="/logo-mob.png"
+            alt="Logo"
+            sizes="100vw"
+            width={60}
+            height={60}
+            className="flex lg:hidden"
+          />
+
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            sizes="100vw"
+            width={240}
+            height={60}
+            className="hidden lg:flex"
+          />
         </Link>
 
-        {isSmallDevice && (
-          <button
-            className={clsx("burger", { open: menuOpen })}
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Toggle menu"
-            aria-expanded={menuOpen}
-            aria-controls="main-nav"
-            type="button"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        )}
+        <button
+          className={clsx("burger lg:hidden", { open: menuOpen })}
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="main-nav"
+          type="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
         {/* Fullscreen nav panel */}
         <nav

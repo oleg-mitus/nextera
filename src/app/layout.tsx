@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from 'next/dynamic';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Providers } from "./providers";

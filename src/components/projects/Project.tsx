@@ -3,7 +3,7 @@ import Image from "next/image";
 import ProjectsSlider from "@/components/projects/ProjectsSlider";
 import ProjectParallax from "@/components/projects/ProjectParallax";
 import ProjectMobileParallax from "@/components/projects/ProjectMobileParallax";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMediaQuery } from "usehooks-ts";
 import { projectsBlocks } from "@/data/projects";
 import { FC, useEffect } from "react";
 import AOS from "aos";

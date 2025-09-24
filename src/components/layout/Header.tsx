@@ -30,7 +30,7 @@ const Header: FC = () => {
   return (
     <header
       ref={headerRef}
-      className="fixed w-full inset-x-0 py-2.5 px-4 lg:px-10 h-16 lg:h-25 flex items-center z-10"
+      className="fixed w-full inset-x-0 py-2.5 px-4 lg:px-10 h-16 lg:h-25 flex items-center z-10 bg-[#17292d]"
     >
       <div className="flex justify-between items-center w-full">
         <Link href="/" aria-label="Home">
@@ -41,6 +41,7 @@ const Header: FC = () => {
             width={60}
             height={60}
             className="flex lg:hidden"
+            priority={true}
           />
 
           <Image
@@ -50,15 +51,13 @@ const Header: FC = () => {
             width={240}
             height={60}
             className="hidden lg:flex"
+            priority={true}
           />
         </Link>
 
         <button
           className={clsx("burger lg:hidden", { open: menuOpen })}
           onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          aria-controls="main-nav"
           type="button"
         >
           <span></span>

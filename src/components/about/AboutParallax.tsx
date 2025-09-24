@@ -6,23 +6,23 @@ import { useParallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
 
 const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
-  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: 30 });
-  const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 20 });
-  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: 40 });
-  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 40 });
-  const { ref: line5 } = useParallax<HTMLDivElement>({ speed: 30 });
+  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: 40 });
+  const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 30 });
+  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: 60 });
+  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 70 });
+  const { ref: line5 } = useParallax<HTMLDivElement>({ speed: 40 });
 
-  const sx = (x / 100) * -2;
-  const sy = (y / 100) * -2;
+  const sx = (x / 100) * -4;
+  const sy = (y / 100) * -3;
 
-  const sx2 = (x / 100) * 2;
-  const sy2 = (y / 100) * 3;
+  const sx2 = (x / 100) * 4;
+  const sy2 = (y / 100) * 5;
 
-  const sx3 = (x / 100) * 2;
-  const sy3 = (y / 100) * 3;
+  const sx3 = (x / 100) * 4;
+  const sy3 = (y / 100) * 5;
 
-  const sx4 = (x / 100) * -2;
-  const sy4 = (y / 100) * -1.5;
+  const sx4 = (x / 100) * -4;
+  const sy4 = (y / 100) * -3.5;
 
   return (
     <motion.div>

@@ -9,6 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@types/aos": "^3.0.7",
+    "@uidotdev/usehooks": "^2.4.1",
+    "aos": "^2.3.4",
+    "framer-motion": "^12.23.19",
     "next": "15.5.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",

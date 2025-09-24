@@ -46,6 +46,8 @@ body {
   background: #fff;
   border-radius: 2px;
   transition: .3s;
+  content: '';
+  width: 100%;
 }
 
 .burger.open span:nth-child(1) {

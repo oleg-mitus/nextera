@@ -42,7 +42,7 @@ const ProjectParallax: FC = () => {
         className="w-full absolute inset-0 z-[-1] top-340"
         ref={line5}
       >
-        <Image src="line-2_2.svg" width={1920} height={800} alt="" className="w-full h-auto scale-10" />
+        <Image src="line-2_2.svg" width={1920} height={800} alt="" className="w-full h-auto scale-110" />
       </div>
     </motion.div>
   );

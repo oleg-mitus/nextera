@@ -31,13 +31,14 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <meta name="apple-mobile-web-app-title" content="MyWebSite" />
       <body
         className={`${aliceSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="min-h-screen flex flex-col overflow-hidden">
           <Header />
           <Providers>
-            <main className="pt-25 grow">{children}</main>
+            <main className="pt-16 lg:pt-25 grow">{children}</main>
           </Providers>
           <Footer />
         </div>

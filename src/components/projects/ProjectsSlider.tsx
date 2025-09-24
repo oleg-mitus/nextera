@@ -7,6 +7,7 @@ import "swiper/css";
 import { EffectCoverflow, Mousewheel } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useRouter } from "next/navigation";
 
 interface ProjectItem {
   id: number;
@@ -16,7 +17,12 @@ interface ProjectItem {
 }
 
 const SwiperComponent = ({ items }: { items: ProjectItem[] }) => {
+  const router = useRouter();
   if (items.length === 0) return "";
+
+  const onClick = (id: number) => {
+    router.push(`/projects/${id}`);
+  };
 
   return (
     <>
@@ -47,8 +53,9 @@ const SwiperComponent = ({ items }: { items: ProjectItem[] }) => {
       >
         {items.map((item) => (
           <SwiperSlide
-            className="max-h-50 h-50 lg:max-h-100 lg:h-100 overflow-hidden"
+            className="max-h-50 h-50 lg:max-h-100 lg:h-100 overflow-hidden cursor-pointer"
             key={item.id}
+            onClick={() => onClick(item.id)}
           >
             <Image
               src={item.image}

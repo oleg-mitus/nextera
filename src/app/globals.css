@@ -28,3 +28,71 @@ body {
 .team-swiper .swiper-wrapper .swiper-slide {
   height: 400px;
 }
+
+/* burger */
+.burger {
+  display: none;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: .3s;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 5px);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6.5px, -5px);
+}
+
+@media (max-width:1024px) {
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10001;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .nav ul li {
+    text-align: center;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    background: #17292D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: transform .45s ease;
+    /* только transform */
+    z-index: 10000;
+  }
+
+  .nav.open {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}

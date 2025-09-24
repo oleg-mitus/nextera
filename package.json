@@ -12,6 +12,7 @@
     "@types/aos": "^3.0.7",
     "@uidotdev/usehooks": "^2.4.1",
     "aos": "^2.3.4",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.23.19",
     "next": "15.5.3",
     "react": "19.1.0",

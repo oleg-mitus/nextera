@@ -8,9 +8,9 @@ export default function Home() {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      once: true,     // Whether animation should only happen once
-      easing: 'ease-out-cubic', // Easing function
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-cubic',
     });
   }, []); 
 

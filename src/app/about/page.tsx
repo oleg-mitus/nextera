@@ -1,36 +1,69 @@
 "use client";
 import TeamSlider from "@/components/about/TeamSlider";
-import Image from "next/image";
-import { useParallax } from "react-scroll-parallax";
+import AboutParallax from "@/components/about/AboutParallax";
+import AboutMobileParallax from "@/components/about/AboutMobileParallax";
+import { useMediaQuery } from "@uidotdev/usehooks";
 import teamItems from "@/data/team";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import useHash from "@/composables/useHash";
 
 export default function About() {
-  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: 40 });
-  const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 20 });
+
+  const [hash] = useHash()
+
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 1024px)");
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log(hash)
+    if (window.location.hash) {
+      const id = window.location.hash.slice(1);
+      scrollToSection(id);
+    }
+  }, [hash]);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="about p-10">
-      <div
-        className="w-full absolute inset-0 z-[-1] top-0 h-full aspect-square"
-        ref={line1}
+    <div className="about lg:px-10 py-10 relative">
+      {isSmallDevice ? <AboutMobileParallax /> : <AboutParallax />}
+      <h1
+        className="text-5xl lg:text-7xl font-sans lg:ml-30 px-4 lg:px-0"
+        data-aos="fade-up"
       >
-        <Image src="/line3.svg" fill alt="" className="w-full h-auto" />
-      </div>
-      <div
-        className="w-full absolute inset-0 z-[-1] top-0 h-full aspect-square"
-        ref={line2}
-      >
-        <Image src="/line4.svg" fill alt="" className="w-full h-auto" />
-      </div>
-      <h1 className="text-7xl font-sans">О нас</h1>
-      <div className="team mt-25">
-        <h2 className="text-5xl font-sans">Команда</h2>
-        <div>
+        О нас
+      </h1>
+      <div className="team mt-10 lg:mt-25">
+        <h2
+          className="text-3xl lg:text-5xl font-sans px-4 lg:px-0"
+          data-aos="fade-up"
+        >
+          Команда
+        </h2>
+        <div className="mt-10" data-aos="zoom-in-up">
           <TeamSlider items={teamItems} />
         </div>
       </div>
-      <div className="company mt-25">
-        <h2 className="text-5xl font-sans">Компания</h2>
-        <div className="pl-50 text-3xl flex flex-col gap-10 max-w-400 mt-25">
+      <div className="company mt-15 lg:mt-25 px-4 lg:px-0">
+        <h2 className="text-3xl lg:text-5xl font-sans" data-aos="fade-up">
+          Компания
+        </h2>
+        <div
+          className="lg:pl-50 text-lg lg:text-3xl flex flex-col gap-10 max-w-400 mt-10 lg:mt-25"
+          data-aos="fade-up"
+        >
           <p>
             Мы — продакшн полного цикла, готовый воплотить в жизнь самые смелые
             идеи, а также предложить свои уникальные подходы к их реализации.
@@ -61,9 +94,14 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className="contacts mt-25" id="contacts">
-        <h2 className="text-5xl font-sans">Контакты</h2>
-        <div className="min-h-150 w-full flex items-center justify-center font-sans text-3xl flex-col gap-5">
+      <div className="contacts mt-15 lg:mt-25 px-4 lg:px-0" id="contacts">
+        <h2 className="text-3xl lg:text-5xl font-sans" data-aos="fade-up">
+          Контакты
+        </h2>
+        <div
+          className="lg:min-h-150 w-full flex lg:items-center justify-center font-sans text-xl lg:text-3xl flex-col gap-5 mt-15 lg:mt-0"
+          data-aos="fade-up"
+        >
           <div className="">Телефон(CEO) - 8 800 235 35 35</div>
           <div className="">Телефон (Гендир) - 8 800 235 35 35</div>
         </div>

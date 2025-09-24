@@ -1,6 +1,14 @@
 import Project from "@/components/projects/Project";
 import { projectsBlocks } from "@/data/projects";
 
+export async function generateStaticParams(): Promise<{ id: number }[]> {
+  const pages = projectsBlocks[0].projects;
+
+  return pages.map((project) => ({
+    id: project.id,
+  }));
+}
+
 export default async function Page({
   params,
 }: {
@@ -10,7 +18,7 @@ export default async function Page({
 
   const project = projectsBlocks[0].projects.find((item) => item.id == id);
 
-  if (!project) return ''
+  if (!project) return "";
 
   return <Project project={project} />;
 }

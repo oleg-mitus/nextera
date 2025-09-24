@@ -14,7 +14,7 @@ const Footer: FC = () => {
       <div className="flex justify-between items-center w-full">
         <Link href="/" aria-label="Home">
           <Image
-            src="logo.png"
+            src="/logo.png"
             alt="Logo"
             width={160}
             height={32}

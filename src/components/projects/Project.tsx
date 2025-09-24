@@ -5,7 +5,7 @@ import ProjectParallax from "@/components/projects/ProjectParallax";
 import ProjectMobileParallax from "@/components/projects/ProjectMobileParallax";
 import { useMediaQuery } from "usehooks-ts";
 import { projectsBlocks } from "@/data/projects";
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState, type MouseEvent } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -20,6 +20,15 @@ const Project: FC<{ project: ProjectItem }> = ({ project }) => {
   const projects = projectsBlocks[2].projects;
   const isSmallDevice = useMediaQuery("only screen and (max-width : 1024px)");
 
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event: MouseEvent) => {
+    setMousePosition({
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -29,10 +38,17 @@ const Project: FC<{ project: ProjectItem }> = ({ project }) => {
   }, []);
 
   return (
-    <div className="project lg:px-10 py-10 relative">
-      {isSmallDevice ? <ProjectMobileParallax /> : <ProjectParallax />}
+    <div
+      className="project lg:px-10 py-10 relative"
+      onMouseMove={(event) => handleMouseMove(event)}
+    >
+      {isSmallDevice ? (
+        <ProjectMobileParallax />
+      ) : (
+        <ProjectParallax {...mousePosition} />
+      )}
       <h1
-        className="text-4xl lg:text-7xl font-sans px-4 lg:px-0"
+        className="text-4xl lg:text-5xl 2xl:text-7xl font-sans px-4 lg:px-0"
         data-aos="fade-up"
       >
         {project.name}
@@ -42,17 +58,23 @@ const Project: FC<{ project: ProjectItem }> = ({ project }) => {
         data-aos="zoom-in"
       >
         <Image
-          src={"project.png"}
+          src={"/project.png"}
           alt=""
           fill
           className="w-full h-full object-cover"
         />
       </div>
       <div className="project-description mt-10 lg:mt-25 px-4 lg:px-0">
-        <h2 className="text-3xl lg:text-5xl font-sans" data-aos="fade-up">
+        <h2
+          className="text-3xl lg:text-4xl 2xl:text-5xl font-sans"
+          data-aos="fade-up"
+        >
           О проекте
         </h2>
-        <div className="lg:ml-40 mt-10 max-w-250 text-lg lg:text-2xl flex flex-col gap-5 lg:gap-8" data-aos="fade-down">
+        <div
+          className="lg:ml-40 mt-10 max-w-250 text-lg lg:text-xl 2xl:text-2xl flex flex-col gap-5 lg:gap-8"
+          data-aos="fade-down"
+        >
           <p>
             Много какой-то важной инфы Много какой-то важной инфы Много какой-то
             важной инфы Много какой-то важной инфы
@@ -71,10 +93,16 @@ const Project: FC<{ project: ProjectItem }> = ({ project }) => {
         </div>
       </div>
       <div className="project-description mt-10 lg:mt-25 px-4 lg:px-0">
-        <h2 className="text-3xl lg:text-5xl font-sans" data-aos="fade-up">
+        <h2
+          className="text-3xl lg:text-4xl 2xl:text-5xl font-sans"
+          data-aos="fade-up"
+        >
           Подробнее
         </h2>
-        <div className="lg:ml-40 mt-10 max-w-250 text-lg lg:text-2xl flex flex-col gap-5 lg:gap-8" data-aos="fade-down">
+        <div
+          className="lg:ml-40 mt-10 max-w-250 text-lg lg:text-xl 2xl:text-2xl flex flex-col gap-5 lg:gap-8"
+          data-aos="fade-down"
+        >
           <p>
             Много какой-то важной инфы Много какой-то важной инфы Много какой-то
             важной инфы Много какой-то важной инфы
@@ -93,10 +121,16 @@ const Project: FC<{ project: ProjectItem }> = ({ project }) => {
         </div>
       </div>
       <div className="project-description mt-10 lg:mt-25 px-4 lg:px-0">
-        <h2 className="text-3xl lg:text-5xl font-sans" data-aos="fade-up">
+        <h2
+          className="text-3xl lg:text-4xl 2xl:text-5xl font-sans"
+          data-aos="fade-up"
+        >
           Съемочная группа
         </h2>
-        <div className="mt-10 text-lg lg:text-2xl flex flex-col gap-8 lg:items-center" data-aos="fade-down">
+        <div
+          className="mt-10 text-lg lg:text-xl 2xl:text-2xl flex flex-col gap-8 lg:items-center"
+          data-aos="fade-down"
+        >
           <div className="flex lg:justify-center flex-col gap-5">
             <div className="flex gap-10">
               <div>Lorem Ipsum</div>
@@ -127,7 +161,7 @@ const Project: FC<{ project: ProjectItem }> = ({ project }) => {
       </div>
       <div className="project-other mt-10 lg:mt-25 lg:mb-25">
         <h2
-          className="text-3xl lg:text-5xl font-sans px-4 lg:px-0 mb-10"
+          className="text-3xl lg:text-4xl 2xl:text-5xl font-sans px-4 lg:px-0 mb-10"
           data-aos="fade-up"
         >
           Наши последнии работы

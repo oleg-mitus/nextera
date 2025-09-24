@@ -35,7 +35,7 @@ const Header: FC = () => {
       <div className="flex justify-between items-center w-full">
         <Link href="/" aria-label="Home">
           <Image
-            src="logo-mob.png"
+            src="/logo-mob.png"
             alt="Logo"
             sizes="100vw"
             width={60}
@@ -44,7 +44,7 @@ const Header: FC = () => {
           />
 
           <Image
-            src="logo.png"
+            src="/logo.png"
             alt="Logo"
             sizes="100vw"
             width={240}

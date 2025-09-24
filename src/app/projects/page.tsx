@@ -4,13 +4,21 @@ import ProjectsParallax from "@/components/projects/ProjectsParallax";
 import ProjectsMobileParallax from "@/components/projects/ProjectsMobileParallax";
 import { useMediaQuery } from "usehooks-ts";
 import { projectsBlocks } from "@/data/projects";
-import { useEffect } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Projects = () => {
-
   const isSmallDevice = useMediaQuery("only screen and (max-width : 1024px)");
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event: MouseEvent) => {
+    setMousePosition({
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
 
   useEffect(() => {
     AOS.init({
@@ -21,8 +29,15 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="projects py-10 lg:px-10 text-center relative">
-      {isSmallDevice ? <ProjectsMobileParallax /> : <ProjectsParallax />}
+    <div
+      className="projects py-10 lg:px-10 text-center relative"
+      onMouseMove={(event) => handleMouseMove(event)}
+    >
+      {isSmallDevice ? (
+        <ProjectsMobileParallax />
+      ) : (
+        <ProjectsParallax {...mousePosition} />
+      )}
       <h1
         className="text-center text-5xl lg:text-7xl font-sans"
         data-aos="zoom-out-down"

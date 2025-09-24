@@ -1,18 +1,26 @@
-'use client'
+"use client";
 
 import TeamSlider from "@/components/about/TeamSlider";
 import AboutParallax from "@/components/about/AboutParallax";
 import AboutMobileParallax from "@/components/about/AboutMobileParallax";
 import { useMediaQuery } from "usehooks-ts";
 import teamItems from "@/data/team";
-import { useEffect } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import useHash from "@/composables/useHash";
+import "aos/dist/aos.css";
 
 export default function About() {
+  const [hash] = useHash();
 
-  const [hash] = useHash()
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event: MouseEvent) => {
+    setMousePosition({
+      x: event.clientX,
+      y: event.clientY,
+    });
+  };
 
   const isSmallDevice = useMediaQuery("only screen and (max-width : 1024px)");
 
@@ -25,7 +33,7 @@ export default function About() {
   }, []);
 
   useEffect(() => {
-    console.log(hash)
+    console.log(hash);
     if (window.location.hash) {
       const id = window.location.hash.slice(1);
       scrollToSection(id);
@@ -38,17 +46,24 @@ export default function About() {
   };
 
   return (
-    <div className="about lg:px-10 py-10 relative">
-      {isSmallDevice ? <AboutMobileParallax /> : <AboutParallax />}
+    <div
+      className="about lg:px-10 py-10 relative"
+      onMouseMove={(event) => handleMouseMove(event)}
+    >
+      {isSmallDevice ? (
+        <AboutMobileParallax />
+      ) : (
+        <AboutParallax {...mousePosition} />
+      )}
       <h1
-        className="text-5xl lg:text-7xl font-sans lg:ml-30 px-4 lg:px-0"
+        className="text-5xl lg:text-6xl 2xl:text-7xl font-sans lg:ml-30 px-4 lg:px-0"
         data-aos="fade-up"
       >
         О нас
       </h1>
       <div className="team mt-10 lg:mt-25">
         <h2
-          className="text-3xl lg:text-5xl font-sans px-4 lg:px-0"
+          className="text-3xl lg:text-4xl 2xl:text-5xl font-sans px-4 lg:px-0"
           data-aos="fade-up"
         >
           Команда
@@ -58,12 +73,15 @@ export default function About() {
         </div>
       </div>
       <div className="company mt-15 lg:mt-25 px-4 lg:px-0">
-        <h2 className="text-3xl lg:text-5xl font-sans" data-aos="fade-up">
+        <h2
+          className="text-3xl lg:text-4xl 2xl:text-5xl font-sans"
+          data-aos="fade-up"
+        >
           Компания
         </h2>
         <div
-          className="lg:pl-50 text-lg lg:text-3xl flex flex-col gap-10 max-w-400 mt-10 lg:mt-25"
-          data-aos="fade-up"
+          className="lg:pl-50 text-lg lg:text-2xl 2xl:text-3xl flex flex-col gap-10 max-w-400 mt-10 lg:mt-25"
+          data-aos="fade-down"
         >
           <p>
             Мы — продакшн полного цикла, готовый воплотить в жизнь самые смелые
@@ -96,7 +114,10 @@ export default function About() {
         </div>
       </div>
       <div className="contacts mt-15 lg:mt-25 px-4 lg:px-0" id="contacts">
-        <h2 className="text-3xl lg:text-5xl font-sans" data-aos="fade-up">
+        <h2
+          className="text-3xl lg:text-4xl 2xl:text-5xl font-sans"
+          data-aos="fade-up"
+        >
           Контакты
         </h2>
         <div

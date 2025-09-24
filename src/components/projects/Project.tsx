@@ -58,7 +58,7 @@ const Project: FC<{ project: ProjectItem }> = ({ project }) => {
         data-aos="zoom-in"
       >
         <Image
-          src={"/project.png"}
+          src={"project.png"}
           alt=""
           fill
           className="w-full h-full object-cover"

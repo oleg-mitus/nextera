@@ -38,7 +38,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
         >
           <Image
-            src="/line-3_1.svg"
+            src="line-3_1.svg"
             width={1920}
             height={800}
             alt=""
@@ -58,7 +58,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
         >
           <Image
-            src="/line-3_2.svg"
+            src="line-3_2.svg"
             width={1920}
             height={800}
             alt=""
@@ -75,7 +75,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
         >
           <Image
-            src="/line-3_3.svg"
+            src="line-3_3.svg"
             width={1920}
             height={800}
             alt=""
@@ -92,7 +92,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
         >
           <Image
-            src="/line-3_4.svg"
+            src="line-3_4.svg"
             width={1920}
             height={800}
             alt=""
@@ -109,7 +109,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
         >
           <Image
-            src="/line-3_5.svg"
+            src="line-3_5.svg"
             width={1920}
             height={800}
             alt=""

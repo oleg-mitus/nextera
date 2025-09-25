@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import dynamic from "next/dynamic";
 // Import Swiper styles
 import "swiper/css";
 // Import any modules you need, e.g., Navigation, Pagination

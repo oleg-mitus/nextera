@@ -9,6 +9,8 @@ import { FC, useEffect, useState, type MouseEvent } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import projectImage from "@/../public/project.png";
+
 interface ProjectItem {
   id: number;
   name: string;
@@ -58,7 +60,7 @@ const Project: FC<{ project: ProjectItem }> = ({ project }) => {
         data-aos="zoom-in"
       >
         <Image
-          src={"project.png"}
+          src={projectImage}
           alt=""
           fill
           className="w-full h-full object-cover"

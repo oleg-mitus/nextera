@@ -63,7 +63,6 @@ const SwiperComponent = ({ items }: { items: ProjectItem[] }) => {
               width={500}
               height={400}
               className="w-full h-full object-cover"
-              priority={true}
             />
           </SwiperSlide>
         ))}

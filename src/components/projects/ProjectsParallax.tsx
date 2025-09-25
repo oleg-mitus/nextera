@@ -5,6 +5,11 @@ import Image from "next/image";
 import { useParallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
 
+import image1 from "@/../public/line-1_1.svg";
+import image2 from "@/../public/line-1_2.svg";
+import image3 from "@/../public/line-1_3.svg";
+import image4 from "@/../public/line-1_4.svg";
+
 const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
   const { ref: line1 } = useParallax<HTMLDivElement>({ speed: 40 });
   const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 20 });
@@ -37,7 +42,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
         >
           <Image
-            src="line-1_1.svg"
+            src={image1}
             width={1920}
             height={800}
             alt=""
@@ -57,7 +62,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
         >
           <Image
-            src="line-2_2.svg"
+            src={image2}
             width={1920}
             height={800}
             alt=""
@@ -74,7 +79,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
         >
           <Image
-            src="line-1_3.svg"
+            src={image3}
             width={1920}
             height={800}
             alt=""
@@ -91,7 +96,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
         >
           <Image
-            src="line-1_4.svg"
+            src={image4}
             width={1920}
             height={800}
             alt=""

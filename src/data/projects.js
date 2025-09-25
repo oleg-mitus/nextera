@@ -1,3 +1,12 @@
+import project1 from "@/../public/project1.png";
+import project2 from "@/../public/project2.png";
+import project3 from "@/../public/project3.png";
+import project4 from "@/../public/project4.png";
+import project5 from "@/../public/project5.png";
+import project6 from "@/../public/project6.png";
+import project7 from "@/../public/project7.png";
+import project8 from "@/../public/project8.png";
+
 export const projectsBlocks = [
   {
     title: "КЛИПЫ",
@@ -7,37 +16,49 @@ export const projectsBlocks = [
         id: 1,
         name: "Приложение 1",
         description: "Описание приложения 1",
-        image: "project1.png",
+        image: project1
       },
       {
         id: 2,
         name: "Приложение 2",
         description: "Описание приложения 1",
-        image: "project2.png",
+        image: project2
       },
       {
         id: 3,
         name: "Приложение 3",
         description: "Описание приложения 1",
-        image: "project3.png",
+        image: project3
       },
       {
         id: 4,
         name: "Приложение 4",
         description: "Описание приложения 1",
-        image: "project4.png",
+        image: project4
       },
       {
         id: 5,
         name: "Приложение 5",
         description: "Описание приложения 1",
-        image: "project5.png",
+        image: project5
       },
       {
         id: 6,
         name: "Приложение 6",
         description: "Описание приложения 1",
-        image: "project6.png",
+        image: project6
+      },
+      {
+        id: 7,
+        name: "Приложение 7",
+        description: "Описание приложения 1",
+        image: project7
+      },
+      {
+        id: 8,
+        name: "Приложение 8",
+        description: "Описание приложения 1",
+        image: project8
       },
     ],
   },
@@ -46,40 +67,40 @@ export const projectsBlocks = [
     description: "Какое-то крутое и прикольное описание рекламы и авторов",
     projects: [
       {
-        id: 1,
+        id: 8,
         name: "Приложение 8",
         description: "Описание приложения 1",
-        image: "project8.png",
+        image: project8
       },
       {
-        id: 2,
+        id: 7,
         name: "Приложение 7",
         description: "Описание приложения 1",
-        image: "project7.png",
-      },
-      {
-        id: 3,
-        name: "Приложение 6",
-        description: "Описание приложения 1",
-        image: "project6.png",
-      },
-      {
-        id: 4,
-        name: "Приложение 5",
-        description: "Описание приложения 1",
-        image: "project5.png",
-      },
-      {
-        id: 5,
-        name: "Приложение 4",
-        description: "Описание приложения 1",
-        image: "project4.png",
+        image: project7
       },
       {
         id: 6,
+        name: "Приложение 6",
+        description: "Описание приложения 1",
+        image: project6
+      },
+      {
+        id: 5,
+        name: "Приложение 5",
+        description: "Описание приложения 1",
+        image: project5
+      },
+      {
+        id: 4,
+        name: "Приложение 4",
+        description: "Описание приложения 1",
+        image: project4
+      },
+      {
+        id: 3,
         name: "Приложение 3",
         description: "Описание приложения 1",
-        image: "project3.png",
+        image: project3
       },
     ],
   },
@@ -88,40 +109,40 @@ export const projectsBlocks = [
     description: "Какое-то крутое и прикольное описание промо и авторов",
     projects: [
       {
-        id: 1,
+        id: 4,
         name: "Приложение 4",
         description: "Описание приложения 1",
-        image: "project4.png",
-      },
-      {
-        id: 2,
-        name: "Приложение 3",
-        description: "Описание приложения 1",
-        image: "project3.png",
+        image: project4
       },
       {
         id: 3,
+        name: "Приложение 3",
+        description: "Описание приложения 1",
+        image: project3
+      },
+      {
+        id: 2,
         name: "Приложение 2",
         description: "Описание приложения 1",
-        image: "project2.png",
+        image: project2
       },
       {
-        id: 4,
+        id: 7,
         name: "Приложение 7",
         description: "Описание приложения 1",
-        image: "project7.png",
+        image: project7
       },
       {
-        id: 5,
+        id: 8,
         name: "Приложение 8",
         description: "Описание приложения 1",
-        image: "project8.png",
+        image: project8
       },
       {
         id: 6,
-        name: "Приложение 1",
+        name: "Приложение 6",
         description: "Описание приложения 1",
-        image: "project1.png",
+        image: project6
       },
     ],
   },

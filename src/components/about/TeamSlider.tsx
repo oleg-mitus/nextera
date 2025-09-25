@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -13,7 +13,7 @@ interface TeamItem {
   id: number;
   name: string;
   post: string;
-  image: string;
+  image: string | StaticImageData;
 }
 
 const SwiperComponent = ({ items }: { items: TeamItem[] }) => {

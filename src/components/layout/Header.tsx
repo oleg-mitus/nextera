@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { FC, useEffect, useState, useRef } from "react";
 import clsx from "clsx";
+import logo from "@/../public/images/logo.png";
+import logoMob from "@/../public/images/logo-mob.png";
 
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,7 +37,7 @@ const Header: FC = () => {
       <div className="flex justify-between items-center w-full">
         <Link href="/" aria-label="Home">
           <Image
-            src="logo-mob.png"
+            src={logoMob}
             alt="Logo"
             sizes="100vw"
             width={60}
@@ -45,7 +47,7 @@ const Header: FC = () => {
           />
 
           <Image
-            src="logo.png"
+            src={logo}
             alt="Logo"
             sizes="100vw"
             width={240}

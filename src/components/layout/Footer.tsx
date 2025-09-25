@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FC } from "react";
+import logo from "@/../public/images/logo.png";
 
 const Footer: FC = () => {
   const pathname = usePathname();
@@ -14,7 +15,7 @@ const Footer: FC = () => {
       <div className="flex justify-between items-center w-full">
         <Link href="/" aria-label="Home">
           <Image
-            src="logo.png"
+            src={logo}
             alt="Logo"
             width={160}
             height={32}

@@ -6,6 +6,14 @@ import project5 from "@/../public/project5.png";
 import project6 from "@/../public/project6.png";
 import project7 from "@/../public/project7.png";
 import project8 from "@/../public/project8.png";
+import { StaticImageData } from "next/image";
+
+type Project = {
+  id: number;
+  name: string;
+  description: string;
+  image: StaticImageData;
+};
 
 export const projectsBlocks = [
   {
@@ -16,51 +24,51 @@ export const projectsBlocks = [
         id: 1,
         name: "Приложение 1",
         description: "Описание приложения 1",
-        image: project1
+        image: project1,
       },
       {
         id: 2,
         name: "Приложение 2",
         description: "Описание приложения 1",
-        image: project2
+        image: project2,
       },
       {
         id: 3,
         name: "Приложение 3",
         description: "Описание приложения 1",
-        image: project3
+        image: project3,
       },
       {
         id: 4,
         name: "Приложение 4",
         description: "Описание приложения 1",
-        image: project4
+        image: project4,
       },
       {
         id: 5,
         name: "Приложение 5",
         description: "Описание приложения 1",
-        image: project5
+        image: project5,
       },
       {
         id: 6,
         name: "Приложение 6",
         description: "Описание приложения 1",
-        image: project6
+        image: project6,
       },
       {
         id: 7,
         name: "Приложение 7",
         description: "Описание приложения 1",
-        image: project7
+        image: project7,
       },
       {
         id: 8,
         name: "Приложение 8",
         description: "Описание приложения 1",
-        image: project8
+        image: project8,
       },
-    ],
+    ] as Project[],
   },
   {
     title: "РЕКЛАМА",
@@ -70,39 +78,39 @@ export const projectsBlocks = [
         id: 8,
         name: "Приложение 8",
         description: "Описание приложения 1",
-        image: project8
+        image: project8,
       },
       {
         id: 7,
         name: "Приложение 7",
         description: "Описание приложения 1",
-        image: project7
+        image: project7,
       },
       {
         id: 6,
         name: "Приложение 6",
         description: "Описание приложения 1",
-        image: project6
+        image: project6,
       },
       {
         id: 5,
         name: "Приложение 5",
         description: "Описание приложения 1",
-        image: project5
+        image: project5,
       },
       {
         id: 4,
         name: "Приложение 4",
         description: "Описание приложения 1",
-        image: project4
+        image: project4,
       },
       {
         id: 3,
         name: "Приложение 3",
         description: "Описание приложения 1",
-        image: project3
+        image: project3,
       },
-    ],
+    ] as Project[],
   },
   {
     title: "ПРОМО",
@@ -112,38 +120,38 @@ export const projectsBlocks = [
         id: 4,
         name: "Приложение 4",
         description: "Описание приложения 1",
-        image: project4
+        image: project4,
       },
       {
         id: 3,
         name: "Приложение 3",
         description: "Описание приложения 1",
-        image: project3
+        image: project3,
       },
       {
         id: 2,
         name: "Приложение 2",
         description: "Описание приложения 1",
-        image: project2
+        image: project2,
       },
       {
         id: 7,
         name: "Приложение 7",
         description: "Описание приложения 1",
-        image: project7
+        image: project7,
       },
       {
         id: 8,
         name: "Приложение 8",
         description: "Описание приложения 1",
-        image: project8
+        image: project8,
       },
       {
         id: 6,
         name: "Приложение 6",
         description: "Описание приложения 1",
-        image: project6
+        image: project6,
       },
-    ],
+    ] as Project[],
   },
 ];

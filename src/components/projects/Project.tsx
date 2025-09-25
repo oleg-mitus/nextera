@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import ProjectsSlider from "@/components/projects/ProjectsSlider";
 import ProjectParallax from "@/components/projects/ProjectParallax";
 import ProjectMobileParallax from "@/components/projects/ProjectMobileParallax";
@@ -15,7 +15,7 @@ interface ProjectItem {
   id: number;
   name: string;
   description: string;
-  image: string;
+  image: StaticImageData;
 }
 
 const Project: FC<{ project: ProjectItem }> = ({ project }) => {

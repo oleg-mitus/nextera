@@ -13,7 +13,7 @@ interface TeamItem {
   id: number;
   name: string;
   post: string;
-  image: string | StaticImageData;
+  image: StaticImageData;
 }
 
 const SwiperComponent = ({ items }: { items: TeamItem[] }) => {

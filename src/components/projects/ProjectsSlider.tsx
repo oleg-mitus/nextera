@@ -13,7 +13,7 @@ interface ProjectItem {
   id: number;
   name: string;
   description: string;
-  image: string | StaticImageData;
+  image: StaticImageData;
 }
 
 const SwiperComponent = ({ items }: { items: ProjectItem[] }) => {

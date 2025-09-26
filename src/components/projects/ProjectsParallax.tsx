@@ -1,9 +1,11 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Image from "next/image";
 import { useParallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import image1 from "@/../public/line-1_1.svg";
 import image2 from "@/../public/line-1_2.svg";
@@ -17,16 +19,24 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
   const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 40 });
 
   const sx = (x / 100) * -5;
-  const sy = (y / 100) * -5;
+  const sy = (y / 100) * 6;
 
   const sx2 = (x / 100) * 5;
-  const sy2 = (y / 100) * 6;
+  const sy2 = (y / 100) * -2;
 
-  const sx3 = (x / 100) * 5;
+  const sx3 = (x / 100) * -5;
   const sy3 = (y / 100) * 6;
 
-  const sx4 = (x / 100) * -5;
-  const sy4 = (y / 100) * -4.5;
+  const sx4 = (x / 100) * 5;
+  const sy4 = (y / 100) * -2;
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
 
   return (
     <motion.div>
@@ -37,7 +47,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
         <div
           style={{
             scale: 1.1,
-            transition: "all 0.3s ease-out",
+            transition: "transform 0.7s ease-out",
             transform: `translate3d(${sx}px, ${sy}px, 0)`,
           }}
         >
@@ -47,6 +57,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
             height={800}
             alt=""
             className="w-full h-auto"
+            priority={true}
           />
         </div>
       </motion.div>
@@ -57,7 +68,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
         <div
           style={{
             scale: 1.1,
-            transition: "all 0.3s ease-out",
+            transition: "transform 0.3s ease-out",
             transform: `translate3d(${sx2}px, ${sy2}px, 0)`,
           }}
         >
@@ -67,6 +78,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
             height={800}
             alt=""
             className="w-full h-auto"
+            priority={true}
           />
         </div>
       </motion.div>
@@ -74,7 +86,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
         <div
           style={{
             scale: 1.1,
-            transition: "all 0.3s ease-out",
+            transition: "transform 0.3s ease-out",
             transform: `translate3d(${sx3}px, ${sy3}px, 0)`,
           }}
         >
@@ -84,6 +96,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
             height={800}
             alt=""
             className="w-full h-auto"
+            priority={true}
           />
         </div>
       </div>
@@ -91,7 +104,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
         <div
           style={{
             scale: 1.1,
-            transition: "all 0.3s ease-out",
+            transition: "transform 0.7s ease-out",
             transform: `translate3d(${sx4}px, ${sy4}px, 0)`,
           }}
         >
@@ -101,6 +114,7 @@ const ProjectsParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
             height={800}
             alt=""
             className="w-full h-auto"
+            priority={true}
           />
         </div>
       </div>

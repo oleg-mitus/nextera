@@ -24,31 +24,31 @@ const ProjectParallax: FC = () => {
         className="w-full absolute inset-0 z-[-1] top-10"
         ref={line1}
       >
-        <Image src={image1} width={1920} height={800} alt="" className="w-full h-auto" />
+        <Image src={image1} width={1920} height={800} alt="" className="w-full h-auto" priority={true} />
       </motion.div>
       <motion.div
         className="w-full absolute inset-0 z-[-1] top-0"
         ref={line2}
       >
-        <Image src={image2} width={1920} height={800} alt="" className="w-full h-auto" />
+        <Image src={image2} width={1920} height={800} alt="" className="w-full h-auto" priority={true} />
       </motion.div>
       <div
         className="w-full absolute inset-0 z-[-1] top-240"
         ref={line3}
       >
-        <Image src={image3} width={1920} height={800} alt="" className="w-full h-auto" />
+        <Image src={image3} width={1920} height={800} alt="" className="w-full h-auto" priority={true} />
       </div>
       <div
         className="w-full absolute inset-0 z-[-1] top-240"
         ref={line4}
       >
-        <Image src={image4} width={1920} height={800} alt="" className="w-full h-auto" />
+        <Image src={image4} width={1920} height={800} alt="" className="w-full h-auto" priority={true} />
       </div>
       <div
         className="w-full absolute inset-0 z-[-1] top-340"
         ref={line5}
       >
-        <Image src={image5} width={1920} height={800} alt="" className="w-full h-auto scale-110" />
+        <Image src={image5} width={1920} height={800} alt="" className="w-full h-auto scale-110" priority={true} />
       </div>
     </motion.div>
   );

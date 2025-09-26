@@ -80,10 +80,10 @@ const Header: FC = () => {
             className="flex gap-10 text-2xl font-sans"
           >
             <li>
-              <Link href="/about">О Нас</Link>
+              <Link href="/projects">Проекты</Link>
             </li>
             <li>
-              <Link href="/projects">Проекты</Link>
+              <Link href="/about">О Нас</Link>
             </li>
             <li>
               <Link href="/about#contacts" scroll={false}>

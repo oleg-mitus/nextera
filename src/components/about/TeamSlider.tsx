@@ -8,6 +8,7 @@ import "swiper/css";
 import { EffectCoverflow, Mousewheel } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface TeamItem {
   id: number;
@@ -15,6 +16,12 @@ interface TeamItem {
   post: string;
   image: StaticImageData;
 }
+
+const variants: Variants = {
+  initial: { transform: "translateX(250px)" },
+  animate: { transform: "translateX(0px)" },
+  exit: { transform: "translateX(-250px)" },
+};
 
 const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
   const [activeItem, setActiveItem] = useState<TeamItem | null>(null);
@@ -46,11 +53,11 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
           0: { slidesPerView: 2.2 },
           768: { slidesPerView: 3 },
         }}
-        className="team-swiper"
+        className="team-swiper max-w-400"
       >
         {items.map((item) => (
           <SwiperSlide
-            className="max-h-100 h-100 overflow-hidden"
+            className="max-h-50 h-50 lg:max-h-80 lg:h-80 overflow-hidden cursor-pointer"
             key={item.id}
           >
             <Image
@@ -66,8 +73,18 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
       </Swiper>
       {activeItem && (
         <div className="mt-8 w-full flex items-center justify-center flex-col">
-          <div className="text-2xl font-sans">{activeItem.name}</div>
-          <div className="text-lg">{activeItem.post}</div>
+          <motion.div
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            key={activeItem.id}
+          >
+            <div className="text-2xl font-sans text-center">
+              {activeItem.name}
+            </div>
+            <div className="text-lg text-center">{activeItem.post}</div>
+          </motion.div>
         </div>
       )}
     </>

@@ -21,12 +21,12 @@ export default function Home() {
           data-aos-delay="300"
           className="text-center max-w-250"
         >
-          <h1 className="text-5xl font-sans lg:text-7xl">NextEra Production</h1>
+          <h1 className="text-5xl font-sans lg:text-7xl">NEXTERA production</h1>
           <p className="text-lg lg:text-2xl mt-5">
             Мы — продакшн полного цикла, готовый воплотить в жизнь самые смелые
             идеи
           </p>
-          <button className="w-full px-8 py-4 bg-white text-black text-xl lg:text-2xl 2xl:text-3xl font-sans mt-8 md:w-auto">
+          <button className="w-full px-8 py-4 bg-white text-black text-xl lg:text-2xl 2xl:text-2xl font-sans mt-8 md:w-auto uppercase">
             Смотреть шоурил
           </button>
         </div>

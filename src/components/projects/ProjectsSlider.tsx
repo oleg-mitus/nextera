@@ -49,20 +49,21 @@ const SwiperComponent = ({ items }: { items: ProjectItem[] }) => {
           0: { slidesPerView: 2.2 },
           768: { slidesPerView: 3 },
         }}
-        className="team-swiper mt-10"
+        className="team-swiper mt-10 max-w-400"
       >
         {items.map((item) => (
           <SwiperSlide
-            className="max-h-50 h-50 lg:max-h-100 lg:h-100 overflow-hidden cursor-pointer"
+            className="max-h-50 h-50 lg:max-h-80 lg:h-80 overflow-hidden cursor-pointer"
             key={item.id}
             onClick={() => onClick(item.id)}
           >
             <Image
               src={item.image}
               alt={item.name}
-              width={500}
-              height={400}
+              width={400}
+              height={250}
               className="w-full h-full object-cover"
+              priority={true}
             />
           </SwiperSlide>
         ))}

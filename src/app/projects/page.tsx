@@ -50,8 +50,7 @@ const Projects = () => {
   return (
     <div
       className={clsx(
-        "projects py-10 lg:px-10 text-center relative opacity-0",
-        { "opacity-100": contentVisible }
+        "projects py-10 lg:px-10 text-center relative "
       )}
       onMouseMove={(event) => handleMouseMove(event)}
     >

@@ -48,36 +48,45 @@ const Projects = () => {
   }, []);
 
   return (
-    <div
-      className={clsx(
-        "projects py-10 lg:px-10 text-center relative "
-      )}
-      onMouseMove={(event) => handleMouseMove(event)}
-    >
-      {isSmallDevice ? (
-        <ProjectsMobileParallax />
-      ) : (
-        <ProjectsParallax {...mousePosition} />
-      )}
-      {projectsBlocks.map((item) => (
+    <>
+      {contentVisible ? (
         <div
-          className="projects-block mt-20 lg:mt-30 font-sans"
-          key={item.title}
-          data-aos="fade-up"
+          className={clsx(
+            "projects py-10 lg:px-10 text-center relative ",
+          )}
+          onMouseMove={(event) => handleMouseMove(event)}
         >
-          <h2 className="text-center text-4xl lg:text-5xl" data-aos="fade-up">
-            {item.title}
-          </h2>
-          <div
-            className="text-xl mt-2.5 lg:text-2xl max-w-150 mx-auto"
-            data-aos="fade-up"
-          >
-            {item.description}
-          </div>
-          <ProjectsSlider items={item.projects} />
+          {isSmallDevice ? (
+            <ProjectsMobileParallax />
+          ) : (
+            <ProjectsParallax {...mousePosition} />
+          )}
+          {projectsBlocks.map((item) => (
+            <div
+              className="projects-block mt-20 lg:mt-30 font-sans"
+              key={item.title}
+              data-aos="fade-up"
+            >
+              <h2
+                className="text-center text-4xl lg:text-5xl"
+                data-aos="fade-up"
+              >
+                {item.title}
+              </h2>
+              <div
+                className="text-xl mt-2.5 lg:text-2xl max-w-150 mx-auto"
+                data-aos="fade-up"
+              >
+                {item.description}
+              </div>
+              <ProjectsSlider items={item.projects} />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
 };
 

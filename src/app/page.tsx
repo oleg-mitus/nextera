@@ -1,17 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-out-cubic",
-    });
-  }, []);
+  
 
   return (
     <div className="main-page h-full w-full flex items-center justify-center grow absolute inset-0">

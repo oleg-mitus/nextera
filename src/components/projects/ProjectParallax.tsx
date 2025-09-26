@@ -36,6 +36,17 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
         className="w-full absolute inset-0 z-[-1] -top-40"
         ref={line1}
       >
+        <motion.div
+          animate={{
+            translateY: [0, -50, 30, -100, 0], // Animate x position from 0 to 100 and back to 0
+          }}
+          transition={{
+            repeat: Infinity, // Loop the animation indefinitely
+            duration: 50, // Animation duration for one cycle
+            ease: 'easeInOut', // Easing function
+          }}
+
+        >
         <div
           style={{
             scale: 1.2,
@@ -52,11 +63,22 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
             priority={true}
           />
         </div>
+        </motion.div>
       </motion.div>
       <motion.div
         className="w-full absolute inset-0 z-[-1] -top-40"
         ref={line2}
       >
+        <motion.div
+          animate={{
+            translateY: [-70, 120, 0, 100, 0], // Animate x position from 0 to 100 and back to 0
+          }}
+          transition={{
+            repeat: Infinity, // Loop the animation indefinitely
+            duration: 50, // Animation duration for one cycle
+            ease: 'easeInOut', // Easing function
+          }}
+        >
         <div
           style={{
             scale: 1.2,
@@ -73,8 +95,20 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
             priority={true}
           />
         </div>
+        </motion.div>
       </motion.div>
       <div className="w-full absolute inset-0 z-[-1] top-300" ref={line3}>
+        <motion.div
+          animate={{
+            translateY: [0, -50, 30, -100, 0], // Animate x position from 0 to 100 and back to 0
+          }}
+          transition={{
+            repeat: Infinity, // Loop the animation indefinitely
+            duration: 50, // Animation duration for one cycle
+            ease: 'easeInOut', // Easing function
+          }}
+
+        >
         <div
           style={{
             scale: 1.2,
@@ -91,8 +125,19 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
             priority={true}
           />
         </div>
+        </motion.div>
       </div>
       <div className="w-full absolute inset-0 z-[-1] top-300" ref={line4}>
+        <motion.div
+          animate={{
+            translateY: [-70, 120, 0, 100, 0], // Animate x position from 0 to 100 and back to 0
+          }}
+          transition={{
+            repeat: Infinity, // Loop the animation indefinitely
+            duration: 50, // Animation duration for one cycle
+            ease: 'easeInOut', // Easing function
+          }}
+        >
         <div
           style={{
             scale: 1.2,
@@ -109,6 +154,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
             priority={true}
           />
         </div>
+        </motion.div>
       </div>
       <div className="w-full absolute inset-0 z-[-1] top-500" ref={line5}>
         <div

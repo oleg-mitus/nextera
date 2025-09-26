@@ -12,11 +12,11 @@ import image4 from '@/../public/line-3_4.svg';
 import image5 from '@/../public/line-3_5.svg';
 
 const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
-  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: 40 });
+  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: -20 });
   const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 30 });
-  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: 60 });
-  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 70 });
-  const { ref: line5 } = useParallax<HTMLDivElement>({ speed: 40 });
+  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: -10 });
+  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 40 });
+  const { ref: line5 } = useParallax<HTMLDivElement>({ speed: -20 });
 
   const sx = (x / 100) * -8;
   const sy = (y / 100) * 8;
@@ -126,6 +126,16 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
         </motion.div>
       </div>
       <div className='w-full absolute inset-0 z-[-1] top-300' ref={line4}>
+        <motion.div
+          animate={{
+            translateY: [-70, 120, 0, 100, 0], // Animate x position from 0 to 100 and back to 0
+          }}
+          transition={{
+            repeat: Infinity, // Loop the animation indefinitely
+            duration: 50, // Animation duration for one cycle
+            ease: 'easeInOut', // Easing function
+          }}
+        >
         <div
           style={{
             scale: 1.2,
@@ -142,6 +152,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
             priority={true}
           />
         </div>
+        </motion.div>
       </div>
       <div className='w-full absolute inset-0 z-[-1] top-500' ref={line5}>
         <motion.div

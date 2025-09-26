@@ -139,7 +139,7 @@ export default function About() {
                 animate={{ height: isExpanded ? "auto" : 0, opacity: 1 }}
                 exit={{ height: 0, opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                style={}
+                style={{ overflow: "hidden" }}
               >
                 {/* Content that expands/collapses */}
                 <p>Какой-то манифест</p>

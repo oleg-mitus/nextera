@@ -1,5 +1,5 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData, ImageProps } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -8,6 +8,7 @@ import { EffectCoverflow, Mousewheel } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface ProjectItem {
   id: number;
@@ -62,8 +63,8 @@ const SwiperComponent = ({ items }: { items: ProjectItem[] }) => {
               alt={item.name}
               width={400}
               height={250}
+              placeholder="blur"
               className="w-full h-full object-cover"
-             
             />
           </SwiperSlide>
         ))}

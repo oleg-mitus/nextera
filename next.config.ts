@@ -9,11 +9,7 @@ const withNextIntl = createNextIntlPlugin({
 
 const config: NextConfig = {
   output: "export",
-  experimental: {
-    // If you are using Turbopack with Next.js 15, specifically add `turbo` here.
-    // This ensures next-intl adds aliases in the correct experimental key.
-    turbo: {},
-  },
+  basePath: "/nextera",
   // Other Next.js configuration options
 };
 

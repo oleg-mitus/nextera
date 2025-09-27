@@ -1,8 +1,9 @@
 "use client";
 
-export default function Home() {
-  
+import { FC } from "react";
 
+const HomeText: FC<{ lang: "ru" | "en" }> = ({ lang = "ru" }) => {
+    
   return (
     <div className="main-page h-full w-full flex items-center justify-center grow absolute inset-0">
       <div className="main-page-block p-5">
@@ -23,4 +24,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default HomeText;

@@ -100,3 +100,14 @@ body {
     pointer-events: auto;
   }
 }
+
+h1,
+h2,
+.title-text {
+  @apply lg:text-5xl
+}
+
+.text,
+p {
+  @apply text-lg lg:text-2xl 2xl:text-3xl
+}

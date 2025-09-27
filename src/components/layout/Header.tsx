@@ -6,10 +6,13 @@ import { FC, useEffect, useState, useRef } from "react";
 import clsx from "clsx";
 import logo from "@/../public/images/logo.png";
 import logoMob from "@/../public/images/logo-mob.png";
+import { useLocale, useTranslations } from "next-intl";
+import { Link as LangLink } from "@/i18n/navigation";
 
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef(null);
+  const locale = useLocale();
 
   useEffect(() => {
     if (menuOpen) {
@@ -28,6 +31,8 @@ const Header: FC = () => {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  const t = useTranslations("Navigation");
 
   return (
     <header
@@ -80,18 +85,20 @@ const Header: FC = () => {
             className="flex gap-10 text-2xl font-sans"
           >
             <li>
-              <Link href="/projects">Проекты</Link>
+              <Link href="/projects">{t("projects")}</Link>
             </li>
             <li>
-              <Link href="/about">О Нас</Link>
+              <Link href="/about">{t("about")}</Link>
             </li>
             <li>
               <Link href="/about#contacts" scroll={false}>
-                Контакты
+                {t("contacts")}
               </Link>
             </li>
             <li>
-              <Link href="/en">ENG</Link>
+              <LangLink href="/" locale={locale === "ru" ? "en" : "ru"}>
+                {t("locale")}
+              </LangLink>
             </li>
           </ul>
         </nav>

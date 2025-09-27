@@ -11,7 +11,7 @@ const Footer: FC = () => {
   if (pathname === "/") return "";
 
   return (
-    <footer className="w-full inset-x-0 overflow-hidden px-4 lg:px-10 h-20 lg:h-30">
+    <footer className="w-full inset-x-0 overflow-hidden px-4 lg:px-10 h-30 lg:h-50">
       <div className="flex justify-between items-center w-full relative">
         <Link href="/" aria-label="Home">
           <Image
@@ -30,7 +30,9 @@ const Footer: FC = () => {
           Контакты
         </Link>
       </div>
-      <div className="w-full text-center text-sm mt-2.5">© Nextera | All Rights Reserved.</div>
+      <div className="w-full text-center text-sm mt-2.5">
+        © Nextera | All Rights Reserved.
+      </div>
     </footer>
   );
 };

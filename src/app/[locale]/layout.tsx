@@ -7,7 +7,11 @@ import localFont from "next/font/local";
 import "@/app/globals.css";
 import { routing } from "@/i18n/routing";
 import { Locale, hasLocale, NextIntlClientProvider } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 
 const aliceSans = Alice({
   variable: "--font-alice-sans",
@@ -68,10 +72,10 @@ export async function generateMetadata(
 
 export default async function RootLayout({
   children,
-  params
-}: LayoutProps<'/[locale]'>) {
+  params,
+}: LayoutProps<"/[locale]">) {
   const { locale } = await params;
-
+  const messages = await getMessages();
   // Enable static rendering
   setRequestLocale(locale);
 
@@ -81,7 +85,7 @@ export default async function RootLayout({
       <body
         className={`${axiforma.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
           <div className="min-h-screen flex flex-col overflow-hidden">
             <Header />
             <Providers>

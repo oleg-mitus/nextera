@@ -1,18 +1,18 @@
+import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
 import About from "@/components/about/About";
-import { Suspense } from "react";
 
-const Loading = () => {
-  return (
-    <div className="fixed inset-0 flex items-center justify-center bg-[#17292d] z-50">
-      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-white"></div>
-    </div>
-  );
-};
+export default function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = use(params);
+  // Enable static rendering
+  setRequestLocale(locale);
 
-export default function AboutPAge() {
-  return (
-    <Suspense fallback={<Loading />}>
-      <About />
-    </Suspense>
-  );
+  return <About />;
 }
+
+export const dynamic = 'force-static';
+export const revalidate = false;

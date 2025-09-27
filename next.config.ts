@@ -3,11 +3,12 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin({
   experimental: {
-    createMessagesDeclaration: "./messages/en.json",
+    createMessagesDeclaration: "./messages/ru.json",
   },
 });
 
 const config: NextConfig = {
+  output: "export",
   experimental: {
     // If you are using Turbopack with Next.js 15, specifically add `turbo` here.
     // This ensures next-intl adds aliases in the correct experimental key.

@@ -9,10 +9,10 @@ export default function Home() {
         <div
           data-aos="zoom-in-up"
           data-aos-delay="300"
-          className="text-center max-w-250"
+          className="text-center max-w-200"
         >
           <h1 className="text-5xl font-sans lg:text-7xl">NEXTERA production</h1>
-          <p className="text-lg lg:text-2xl mt-5">
+          <p className="text-lg lg:text-2xl 2xl:text-3xl mt-5">
             Мы — продакшн полного цикла, готовый воплотить в жизнь самые смелые
             идеи
           </p>

@@ -1,6 +1,7 @@
 import Project from "@/components/projects/Project";
 import { projectsBlocks } from "@/data/projects";
 
+/*
 export async function generateStaticParams(): Promise<{ id: string }[]> {
   const pages = projectsBlocks[0].projects;
 
@@ -8,6 +9,7 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
     id: project.id.toString(),
   }));
 }
+  */
 
 export default async function Page({
   params,

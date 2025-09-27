@@ -7,6 +7,13 @@ const withNextIntl = createNextIntlPlugin({
   },
 });
 
-const config: NextConfig = {};
+const config: NextConfig = {
+  experimental: {
+    // If you are using Turbopack with Next.js 15, specifically add `turbo` here.
+    // This ensures next-intl adds aliases in the correct experimental key.
+    turbo: {},
+  },
+  // Other Next.js configuration options
+};
 
 export default withNextIntl(config);

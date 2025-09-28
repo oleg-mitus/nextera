@@ -11,7 +11,7 @@ import { useTranslation } from '@/composables/useTranslation';
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef(null);
-  const { translate, language } = useTranslation();
+  const { translate, language, getLink } = useTranslation();
 
   useEffect(() => {
     if (menuOpen) {
@@ -37,7 +37,7 @@ const Header: FC = () => {
       className='fixed w-full inset-x-0 py-2.5 px-4 lg:px-10 h-16 lg:h-25 flex items-center z-10 bg-[#17292d]'
     >
       <div className='flex justify-between items-center w-full'>
-        <Link href='/' aria-label='Home'>
+        <Link href={getLink('/')} aria-label='Home'>
           <Image
             src={logoMob}
             alt='Logo'
@@ -82,20 +82,20 @@ const Header: FC = () => {
             className='flex gap-10 text-2xl font-sans'
           >
             <li>
-              <Link href='/projects'>
+              <Link href={getLink('/projects')}>
                 {translate('Navigation', 'projects')}
               </Link>
             </li>
             <li>
-              <Link href='/about'>{translate('Navigation', 'about')}</Link>
+              <Link href={getLink('/about')}>{translate('Navigation', 'about')}</Link>
             </li>
             <li>
-              <Link href='/about#contacts' scroll={false}>
+              <Link href={getLink('/about#contacts')} scroll={false}>
                 {translate('Navigation', 'contacts')}
               </Link>
             </li>
             <li>
-              <Link href={language === 'ru' ? '/en' : '/ru'}>{translate('Navigation', 'locale')}</Link>
+              <Link href={language === 'ru' ? '/en' : '/'}>{translate('Navigation', 'locale')}</Link>
             </li>
           </ul>
         </nav>

@@ -6,13 +6,12 @@ import { FC, useEffect, useState, useRef } from "react";
 import clsx from "clsx";
 import logo from "@/../public/images/logo.png";
 import logoMob from "@/../public/images/logo-mob.png";
-import { useLocale, useTranslations } from "next-intl";
-import { Link as LangLink } from "@/i18n/navigation";
+import { useTranslation } from "@/composables/useTranslation"
 
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef(null);
-  const locale = useLocale();
+  const { translate} = useTranslation()
 
   useEffect(() => {
     if (menuOpen) {
@@ -31,8 +30,6 @@ const Header: FC = () => {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
-
-  const t = useTranslations("Navigation");
 
   return (
     <header
@@ -85,20 +82,20 @@ const Header: FC = () => {
             className="flex gap-10 text-2xl font-sans"
           >
             <li>
-              <Link href="/projects">{t("projects")}</Link>
+              <Link href="/projects">{translate('Navigation', 'projects')}</Link>
             </li>
             <li>
-              <Link href="/about">{t("about")}</Link>
+              <Link href="/about">about</Link>
             </li>
             <li>
               <Link href="/about#contacts" scroll={false}>
-                {t("contacts")}
+                contacts
               </Link>
             </li>
             <li>
-              <LangLink href="/" locale={locale === "ru" ? "en" : "ru"}>
-                {t("locale")}
-              </LangLink>
+              <Link href="/">
+                locale
+              </Link>
             </li>
           </ul>
         </nav>

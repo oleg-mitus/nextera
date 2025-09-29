@@ -12,20 +12,20 @@ import image4 from '@/../public/line-3_4.svg';
 import image5 from '@/../public/line-3_5.svg';
 
 const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
-  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: -20 });
-  const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 30 });
-  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: -10 });
-  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 40 });
+  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: -10 });
+  const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 15 });
+  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: -5 });
+  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 20 });
   const { ref: line5 } = useParallax<HTMLDivElement>({ speed: -20 });
 
-  const sx = (x / 100) * -8;
-  const sy = (y / 100) * 8;
+  const sx = (x / 100) * -5;
+  const sy = (y / 100) * 5;
 
   const sx2 = (x / 100) * -3;
   const sy2 = (y / 100) * -3;
 
-  const sx3 = (x / 100) * -8;
-  const sy3 = (y / 100) * 8;
+  const sx3 = (x / 100) * -5;
+  const sy3 = (y / 100) * 5;
 
   const sx4 = (x / 100) * 1;
   const sy4 = (y / 100) * -3;
@@ -42,7 +42,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
-            duration: 50, // Animation duration for one cycle
+            duration: 100, // Animation duration for one cycle
             ease: 'easeInOut', // Easing function
           }}
         >
@@ -74,7 +74,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
-            duration: 50, // Animation duration for one cycle
+            duration: 100, // Animation duration for one cycle
             ease: 'easeInOut', // Easing function
           }}
         >
@@ -103,7 +103,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
-            duration: 50, // Animation duration for one cycle
+            duration: 100, // Animation duration for one cycle
             ease: 'easeInOut', // Easing function
           }}
         >
@@ -132,14 +132,14 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
-            duration: 50, // Animation duration for one cycle
+            duration: 100, // Animation duration for one cycle
             ease: 'easeInOut', // Easing function
           }}
         >
         <div
           style={{
             scale: 1.2,
-            transition: 'all 0.1s ease-out',
+            transition: 'all 0.3s ease-out',
             transform: `translate3d(${sx4}px, ${sy4}px, 0)`,
           }}
         >
@@ -161,7 +161,7 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           }}
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
-            duration: 50, // Animation duration for one cycle
+            duration: 100, // Animation duration for one cycle
             ease: 'easeInOut', // Easing function
           }}
         >

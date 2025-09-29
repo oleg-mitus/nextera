@@ -2,7 +2,7 @@
 
 import TeamSlider from "@/components/about/TeamSlider";
 import AboutParallax from "@/components/about/AboutParallax";
-import AboutMobileParallax from "@/components/about/AboutMobileParallax";
+import AboutMobileParallax from "@/components/projects/ProjectMobileParallax";
 import { useMediaQuery } from "usehooks-ts";
 import teamItems from "@/data/team";
 import { useEffect, useState, type MouseEvent } from "react";

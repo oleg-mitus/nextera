@@ -12,11 +12,11 @@ import image4 from '@/../public/line-2_4.svg';
 import image5 from '@/../public/line-2_5.svg';
 
 const ProjectParallax: FC = () => {
-  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: 10 });
-  const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 24 });
-  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: 30 });
-  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 40 });
-  const { ref: line5 } = useParallax<HTMLDivElement>({ speed: 43 });
+  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: 5 });
+  const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 12 });
+  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: 15 });
+  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 20 });
+  const { ref: line5 } = useParallax<HTMLDivElement>({ speed: 21 });
 
   return (
     <motion.div>
@@ -27,7 +27,7 @@ const ProjectParallax: FC = () => {
           }}
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
-            duration: 50, // Animation duration for one cycle
+            duration: 150, // Animation duration for one cycle
             ease: 'easeInOut', // Easing function
           }}
           style={{ scale: 2 }}
@@ -49,7 +49,7 @@ const ProjectParallax: FC = () => {
           }}
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
-            duration: 50, // Animation duration for one cycle
+            duration: 150, // Animation duration for one cycle
             ease: 'easeInOut', // Easing function
           }}
           style={{ scale: 2 }}
@@ -64,35 +64,71 @@ const ProjectParallax: FC = () => {
           />
         </motion.div>
       </motion.div>
-      <div className='w-full absolute inset-0 z-[-1] top-240' ref={line3}>
-        <Image
-          src={image3}
-          width={1920}
-          height={800}
-          alt=''
-          className='w-full h-auto'
-          priority={true}
-        />
+      <div className='w-full absolute inset-0 z-[-1] top-280' ref={line3}>
+        <motion.div
+          animate={{
+            translateY: [0, -50, 30, -100, 0], // Animate x position from 0 to 100 and back to 0
+          }}
+          transition={{
+            repeat: Infinity, // Loop the animation indefinitely
+            duration: 150, // Animation duration for one cycle
+            ease: 'easeInOut', // Easing function
+          }}
+          style={{ scale: 2 }}
+        >
+          <Image
+            src={image3}
+            width={1920}
+            height={800}
+            alt=''
+            className='w-full h-auto'
+            priority={true}
+          />
+        </motion.div>
       </div>
-      <div className='w-full absolute inset-0 z-[-1] top-240' ref={line4}>
-        <Image
-          src={image4}
-          width={1920}
-          height={800}
-          alt=''
-          className='w-full h-auto'
-          priority={true}
-        />
+      <div className='w-full absolute inset-0 z-[-1] top-280' ref={line4}>
+        <motion.div
+          animate={{
+            translateY: [-70, 120, 0, 100, 0], // Animate x position from 0 to 100 and back to 0
+          }}
+          transition={{
+            repeat: Infinity, // Loop the animation indefinitely
+            duration: 150, // Animation duration for one cycle
+            ease: 'easeInOut', // Easing function
+          }}
+          style={{ scale: 2 }}
+        >
+          <Image
+            src={image4}
+            width={1920}
+            height={800}
+            alt=''
+            className='w-full h-auto'
+            priority={true}
+          />
+        </motion.div>
       </div>
-      <div className='w-full absolute inset-0 z-[-1] top-340' ref={line5}>
-        <Image
-          src={image5}
-          width={1920}
-          height={800}
-          alt=''
-          className='w-full h-auto'
-          priority={true}
-        />
+      <div className='w-full absolute inset-0 z-[-1] top-440' ref={line5}>
+        <motion.div
+          animate={{
+            translateY: [0, -50, 30, -100, 0], // Animate x position from 0 to 100 and back to 0
+          }}
+          transition={{
+            repeat: Infinity, // Loop the animation indefinitely
+            duration: 150, // Animation duration for one cycle
+            ease: 'easeInOut', // Easing function
+          }}
+          style={{ scale: 2 }}
+        >
+          <Image
+            src={image5}
+            width={1920}
+            height={800}
+            alt=''
+            className='w-full h-auto'
+            priority={true}
+          />
+        </motion.div>
       </div>
     </motion.div>
   );

@@ -12,11 +12,11 @@ import image4 from "@/../public/line-3_4.svg";
 import image5 from "@/../public/line-3_5.svg";
 
 const ProjectParallax: FC = () => {
-  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: -10 });
-  const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 4 });
-  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: -10 });
-  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 10 });
-  const { ref: line5 } = useParallax<HTMLDivElement>({ speed: -13 });
+  const { ref: line1 } = useParallax<HTMLDivElement>({ speed: -5 });
+  const { ref: line2 } = useParallax<HTMLDivElement>({ speed: 2 });
+  const { ref: line3 } = useParallax<HTMLDivElement>({ speed: -5 });
+  const { ref: line4 } = useParallax<HTMLDivElement>({ speed: 5 });
+  const { ref: line5 } = useParallax<HTMLDivElement>({ speed: -6 });
 
   return (
     <motion.div>
@@ -31,7 +31,7 @@ const ProjectParallax: FC = () => {
           }}
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
-            duration: 50, // Animation duration for one cycle
+            duration: 100, // Animation duration for one cycle
             ease: 'easeInOut', // Easing function
           }}
         >

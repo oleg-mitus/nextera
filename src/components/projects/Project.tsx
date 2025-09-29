@@ -1,7 +1,7 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import ProjectsSlider from "@/components/projects/ProjectsSlider";
-import ProjectParallax from "@/components/projects/ProjectParallax";
+import ProjectParallax from "@/components/about/AboutParallax";
 import ProjectMobileParallax from "@/components/projects/ProjectMobileParallax";
 import { useMediaQuery } from "usehooks-ts";
 import { projectsBlocks } from "@/data/projects";

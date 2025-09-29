@@ -1,7 +1,7 @@
 "use client";
 import ProjectsSlider from "@/components/projects/ProjectsSlider";
-import ProjectsParallax from "@/components/projects/ProjectsParallax";
-import ProjectsMobileParallax from "@/components/projects/ProjectsMobileParallax";
+import ProjectsParallax from "@/components/about/AboutParallax";
+import ProjectsMobileParallax from "@/components/projects/ProjectMobileParallax";
 import { useMediaQuery } from "usehooks-ts";
 import { projectsBlocks } from "@/data/projects";
 import { useState, type MouseEvent } from "react";

@@ -1,14 +1,11 @@
 "use client";
-import Image, { StaticImageData, ImageProps } from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-// Import any modules you need, e.g., Navigation, Pagination
 import { EffectCoverflow, Mousewheel } from "swiper/modules";
+import { useRouter } from "next/navigation";
+import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 interface ProjectItem {
   id: number;

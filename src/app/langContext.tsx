@@ -25,14 +25,14 @@ export const TranslationProvider = ({
         setStrings(messages);
       } catch (error) {
         console.error(`Failed to load translations for ${language}:`, error);
-        setStrings({}); // Fallback to empty object
+        setStrings({});
       }
     };
     loadTranslations();
   }, [language]);
 
   const translate = (key: string) => {
-    return strings[key] || key; // Return key if translation not found
+    return strings[key] || key;
   };
 
   return (

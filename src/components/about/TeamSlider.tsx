@@ -2,13 +2,11 @@
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-// Import any modules you need, e.g., Navigation, Pagination
 import { EffectCoverflow, Mousewheel } from "swiper/modules";
+import { motion, Variants } from "framer-motion";
+import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface TeamItem {
   id: number;
@@ -65,6 +63,7 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
               alt={item.name}
               width={500}
               height={400}
+              placeholder="blur"
               className="w-full h-full object-cover"
               priority={true}
             />

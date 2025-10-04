@@ -4,10 +4,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FC, useEffect, useState, useRef } from 'react';
 import clsx from 'clsx';
-import logo from '@/../public/images/logo.png';
-import logoMob from '@/../public/images/logo-mob.png';
 import { useTranslation } from '@/composables/useTranslation';
 import { usePathname } from 'next/navigation';
+import logo from '@/../public/images/logo.png';
+import logoMob from '@/../public/images/logo-mob.png';
 
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);

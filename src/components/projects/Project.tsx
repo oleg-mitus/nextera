@@ -77,7 +77,7 @@ const Project: FC<{ project: ProjectItem }> = ({ project }) => {
       </div>
       <div className="project-description mt-10 lg:mt-25 px-4 lg:px-0">
         <h2
-          className="text-3xl lg:text-4xl 2xl:text-5xl font-sans"
+          className="text-3xl lg:text-4xl 2xl:text-5xl font-sans uppercase"
           data-aos="fade-up"
         >
           О проекте

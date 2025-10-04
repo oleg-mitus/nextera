@@ -79,7 +79,7 @@ const Header: FC = () => {
           <div onClick={() => setMenuOpen(false)} aria-hidden />
           <ul
             onClick={() => setMenuOpen(false)}
-            className='flex gap-10 text-2xl font-sans'
+            className='flex gap-10 text-2xl font-sans uppercase'
           >
             <li>
               <Link href={getLink('/projects')}>

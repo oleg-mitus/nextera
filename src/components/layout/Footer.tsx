@@ -28,7 +28,7 @@ const Footer: FC = () => {
         <Link
           href={getLink('/about#contacts')}
           scroll={false}
-          className="lg:text-2xl pt-2"
+          className="lg:text-2xl pt-2 uppercase"
         >
           {translate('Navigation', 'contacts')}
         </Link>

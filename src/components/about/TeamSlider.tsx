@@ -18,9 +18,9 @@ interface TeamItem {
 }
 
 const variants: Variants = {
-  initial: { transform: "translateX(250px)" },
-  animate: { transform: "translateX(0px)" },
-  exit: { transform: "translateX(-250px)" },
+  initial: { transform: "translateX(250px)", animationDuration: 1500 },
+  animate: { transform: "translateX(0px)", animationDuration: 1500 },
+  exit: { transform: "translateX(-250px)", animationDuration: 1500 },
 };
 
 const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
@@ -78,6 +78,7 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
             initial="initial"
             animate="animate"
             exit="exit"
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             key={activeItem.id}
           >
             <div className="text-2xl font-sans text-center">

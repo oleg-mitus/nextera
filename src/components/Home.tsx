@@ -1,11 +1,22 @@
 "use client";
 
+import Image from "next/image";
 import { FC } from "react";
+import bg from "@/../public/images/reel.gif";
+
 
 const HomeText: FC<{ lang: "ru" | "en" }> = ({ lang = "ru" }) => {
     
   return (
     <div className="main-page h-full w-full flex items-center justify-center grow absolute inset-0">
+      <div className="main-page-bg absolute inset-0 w-full h-full">
+        <Image
+          src={bg}
+          alt=""
+          fill
+          className="w-full h-full object-cover"
+        /> 
+      </div>
       <div className="main-page-block p-5">
         <div
           data-aos="zoom-in-up"

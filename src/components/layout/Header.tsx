@@ -7,11 +7,13 @@ import clsx from 'clsx';
 import logo from '@/../public/images/logo.png';
 import logoMob from '@/../public/images/logo-mob.png';
 import { useTranslation } from '@/composables/useTranslation';
+import { usePathname } from 'next/navigation';
 
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef(null);
   const { translate, language, getLink } = useTranslation();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (menuOpen) {
@@ -34,7 +36,10 @@ const Header: FC = () => {
   return (
     <header
       ref={headerRef}
-      className='fixed w-full inset-x-0 py-2.5 px-4 lg:px-10 h-16 lg:h-25 flex items-center z-10 bg-[#17292d]'
+      className={clsx(
+        'fixed w-full inset-x-0 py-2.5 px-4 lg:px-10 h-16 lg:h-25 flex items-center z-10 bg-[#17292d]',
+        { 'bg-transparent': pathname === '/' || pathname === '/en' }
+      )}
     >
       <div className='flex justify-between items-center w-full'>
         <Link href={getLink('/')} aria-label='Home'>
@@ -87,7 +92,9 @@ const Header: FC = () => {
               </Link>
             </li>
             <li>
-              <Link href={getLink('/about')}>{translate('Navigation', 'about')}</Link>
+              <Link href={getLink('/about')}>
+                {translate('Navigation', 'about')}
+              </Link>
             </li>
             <li>
               <Link href={getLink('/about#contacts')} scroll={false}>
@@ -95,7 +102,9 @@ const Header: FC = () => {
               </Link>
             </li>
             <li>
-              <Link href={language === 'ru' ? '/en' : '/'}>{translate('Navigation', 'locale')}</Link>
+              <Link href={language === 'ru' ? '/en' : '/'}>
+                {translate('Navigation', 'locale')}
+              </Link>
             </li>
           </ul>
         </nav>

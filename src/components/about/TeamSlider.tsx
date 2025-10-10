@@ -1,9 +1,8 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Mousewheel } from "swiper/modules";
-import { motion, Variants } from "framer-motion";
+import { useState, useRef } from "react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Mousewheel, Controller } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -15,26 +14,21 @@ interface TeamItem {
   image: StaticImageData;
 }
 
-const variants: Variants = {
-  initial: { transform: "translateX(250px)", animationDuration: 1500 },
-  animate: { transform: "translateX(0px)", animationDuration: 1500 },
-  exit: { transform: "translateX(-250px)", animationDuration: 1500 },
-};
-
 const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
-  const [activeItem, setActiveItem] = useState<TeamItem | null>(null);
-
+  const [controlledSwiper, setControlledSwiper] = useState<SwiperClass | null>(null);
+  const swiperSlider = useRef<SwiperClass | null>(null);
   if (items.length === 0) return "";
 
   return (
     <>
       <Swiper
-        modules={[EffectCoverflow, Mousewheel]}
+        modules={[EffectCoverflow, Mousewheel, Controller]}
         spaceBetween={0}
         slidesPerView={3}
         navigation={false}
-        onSlideChange={(swiper) => setActiveItem(items[swiper.realIndex])}
-        onSwiper={(swiper) => console.log(swiper)}
+        controller={{ control: controlledSwiper }}
+        
+        onSlideChange={(swiper) => swiperSlider.current?.slideTo(swiper.realIndex)}
         effect="coverflow"
         mousewheel
         grabCursor
@@ -70,23 +64,34 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      {activeItem && (
-        <div className="mt-8 w-full flex items-center justify-center flex-col">
-          <motion.div
-            variants={variants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            key={activeItem.id}
+      <Swiper
+        onSwiper={(swiper) => {
+          swiperSlider.current = swiper;
+        }}
+        spaceBetween={0}
+        slidesPerView={1}
+        allowTouchMove={false}
+        pagination={false}
+        navigation={false}
+        
+        centeredSlides
+        speed={1400}
+        loop
+        className="max-w-140 mt-10"
+      >
+        {items.map((item) => (
+          <SwiperSlide
+            className="max-h-50 h-50 lg:max-h-80 lg:h-80 overflow-hidden cursor-pointer"
+            key={item.id}
           >
             <div className="text-2xl font-sans text-center">
-              {activeItem.name}
+              {item.name}
             </div>
-            <div className="text-lg text-center">{activeItem.post}</div>
-          </motion.div>
-        </div>
-      )}
+            <div className="text-lg text-center">{item.post}</div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
     </>
   );
 };

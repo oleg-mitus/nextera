@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { FC } from 'react';
-import Image from 'next/image';
-import { useParallax } from 'react-scroll-parallax';
-import { motion } from 'framer-motion';
+import { FC } from "react";
+import Image from "next/image";
+import { useParallax } from "react-scroll-parallax";
+import { motion } from "framer-motion";
 
-import image1 from '@/../public/line-3_1.svg';
-import image2 from '@/../public/line-3_2.svg';
-import image3 from '@/../public/line-3_3.svg';
-import image4 from '@/../public/line-3_4.svg';
-import image5 from '@/../public/line-3_5.svg';
+import image1 from "@/../public/line-3_1.svg";
+import image2 from "@/../public/line-3_2.svg";
+import image3 from "@/../public/line-3_3.svg";
+import image4 from "@/../public/line-3_4.svg";
+import image5 from "@/../public/line-3_5.svg";
 
 const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
   const { ref: line1 } = useParallax<HTMLDivElement>({ speed: -10 });
@@ -31,9 +31,17 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
   const sy4 = (y / 100) * -3;
 
   return (
-    <motion.div>
+    <motion.div
+      animate={{
+        opacity: [0, 1], // Animate x position from 0 to 100 and back to 0
+      }}
+      transition={{
+        delay: 1.4,
+        duration: 0.6, // Animation duration for one cycle
+      }}
+    >
       <motion.div
-        className='w-full absolute inset-0 z-[-1] -top-40'
+        className="w-full absolute inset-0 z-[-1] -top-40"
         ref={line1}
       >
         <motion.div
@@ -43,13 +51,13 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
             duration: 100, // Animation duration for one cycle
-            ease: 'easeInOut', // Easing function
+            ease: "easeInOut", // Easing function
           }}
         >
           <div
             style={{
               scale: 1.2,
-              transition: 'all 0.3s ease-out',
+              transition: "all 0.3s ease-out",
               transform: `translate3d(${sx}px, ${sy}px, 0)`,
             }}
           >
@@ -57,15 +65,15 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
               src={image1}
               width={1920}
               height={800}
-              alt=''
-              className='w-full h-auto'
+              alt=""
+              className="w-full h-auto"
               priority={true}
             />
           </div>
         </motion.div>
       </motion.div>
       <motion.div
-        className='w-full absolute inset-0 z-[-1] -top-40'
+        className="w-full absolute inset-0 z-[-1] -top-40"
         ref={line2}
       >
         <motion.div
@@ -75,13 +83,13 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
             duration: 100, // Animation duration for one cycle
-            ease: 'easeInOut', // Easing function
+            ease: "easeInOut", // Easing function
           }}
         >
           <div
             style={{
               scale: 1.2,
-              transition: 'all 0.7s ease-out',
+              transition: "all 0.7s ease-out",
               transform: `translate3d(${sx2}px, ${sy2}px, 0)`,
             }}
           >
@@ -89,14 +97,14 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
               src={image2}
               width={1920}
               height={800}
-              alt=''
-              className='w-full h-auto'
+              alt=""
+              className="w-full h-auto"
               priority={true}
             />
           </div>
         </motion.div>
       </motion.div>
-      <div className='w-full absolute inset-0 z-[-1] top-300' ref={line3}>
+      <div className="w-full absolute inset-0 z-[-1] top-300" ref={line3}>
         <motion.div
           animate={{
             translateY: [0, -50, 30, -100, 0], // Animate x position from 0 to 100 and back to 0
@@ -104,13 +112,13 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
             duration: 100, // Animation duration for one cycle
-            ease: 'easeInOut', // Easing function
+            ease: "easeInOut", // Easing function
           }}
         >
           <div
             style={{
               scale: 1.2,
-              transition: 'all 0.7s ease-out',
+              transition: "all 0.7s ease-out",
               transform: `translate3d(${sx3}px, ${sy3}px, 0)`,
             }}
           >
@@ -118,14 +126,14 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
               src={image3}
               width={1920}
               height={800}
-              alt=''
-              className='w-full h-auto'
+              alt=""
+              className="w-full h-auto"
               priority={true}
             />
           </div>
         </motion.div>
       </div>
-      <div className='w-full absolute inset-0 z-[-1] top-300' ref={line4}>
+      <div className="w-full absolute inset-0 z-[-1] top-300" ref={line4}>
         <motion.div
           animate={{
             translateY: [-70, 120, 0, 100, 0], // Animate x position from 0 to 100 and back to 0
@@ -133,42 +141,42 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
           transition={{
             repeat: Infinity, // Loop the animation indefinitely
             duration: 100, // Animation duration for one cycle
-            ease: 'easeInOut', // Easing function
-          }}
-        >
-        <div
-          style={{
-            scale: 1.2,
-            transition: 'all 0.3s ease-out',
-            transform: `translate3d(${sx4}px, ${sy4}px, 0)`,
-          }}
-        >
-          <Image
-            src={image4}
-            width={1920}
-            height={800}
-            alt=''
-            className='w-full h-auto'
-            priority={true}
-          />
-        </div>
-        </motion.div>
-      </div>
-      <div className='w-full absolute inset-0 z-[-1] top-500' ref={line5}>
-        <motion.div
-          animate={{
-            translateY: [-70, 120, 0, 100, 0], // Animate x position from 0 to 100 and back to 0
-          }}
-          transition={{
-            repeat: Infinity, // Loop the animation indefinitely
-            duration: 100, // Animation duration for one cycle
-            ease: 'easeInOut', // Easing function
+            ease: "easeInOut", // Easing function
           }}
         >
           <div
             style={{
               scale: 1.2,
-              transition: 'all 0.5s ease-out',
+              transition: "all 0.3s ease-out",
+              transform: `translate3d(${sx4}px, ${sy4}px, 0)`,
+            }}
+          >
+            <Image
+              src={image4}
+              width={1920}
+              height={800}
+              alt=""
+              className="w-full h-auto"
+              priority={true}
+            />
+          </div>
+        </motion.div>
+      </div>
+      <div className="w-full absolute inset-0 z-[-1] top-500" ref={line5}>
+        <motion.div
+          animate={{
+            translateY: [-70, 120, 0, 100, 0], // Animate x position from 0 to 100 and back to 0
+          }}
+          transition={{
+            repeat: Infinity, // Loop the animation indefinitely
+            duration: 100, // Animation duration for one cycle
+            ease: "easeInOut", // Easing function
+          }}
+        >
+          <div
+            style={{
+              scale: 1.2,
+              transition: "all 0.5s ease-out",
               transform: `translate3d(${sx}px, ${sy}px, 0)`,
             }}
           >
@@ -176,8 +184,8 @@ const ProjectParallax: FC<{ x: number; y: number }> = ({ x = 0, y = 0 }) => {
               src={image5}
               width={1920}
               height={800}
-              alt=''
-              className='w-full h-auto'
+              alt=""
+              className="w-full h-auto"
               priority={true}
             />
           </div>

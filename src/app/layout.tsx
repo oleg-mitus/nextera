@@ -2,7 +2,7 @@ import localFont from 'next/font/local';
 import '@/app/globals.css';
 
 const axiforma = localFont({
-  variable: '--font-axiforma',
+  variable: '--font-axiforma-sans',
   src: [
     {
       path: '../../public/fonts/axiforma/Axiforma-Thin.ttf',

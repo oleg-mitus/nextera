@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FC } from "react";
 import logo from "@/../public/images/logo.png";
+import logoMob from '@/../public/images/logo-mob.png';
 import { useTranslation } from '@/composables/useTranslation';
 
 
@@ -22,7 +23,14 @@ const Footer: FC = () => {
             alt="Logo"
             width={240}
             height={60}
-            className="w-40 lg:w-60"
+            className="w-40 lg:w-60 hidden lg:flex"
+          />
+          <Image
+            src={logoMob}
+            alt="Logo"
+            width={50}
+            height={50}
+            className="w-15 flex lg:hidden"
           />
         </Link>
         <Link

@@ -97,7 +97,7 @@ const Header: FC = () => {
               </Link>
             </li>
             <li>
-              <Link href={getLink('/about#contacts')} scroll={false}>
+              <Link href={getLink('/about#contacts')}>
                 {translate('Navigation', 'contacts')}
               </Link>
             </li>

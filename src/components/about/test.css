@@ -1,0 +1,59 @@
+/* TextScaleSwiper.css */
+.text-swiper-container {
+  width: 100%;
+  position: relative;
+  height: 300px;
+}
+
+.text-scale-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.text-center {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Title Styles */
+.title-text {
+
+  /* Initial animation state */
+  opacity: 0;
+  transform: translateY(50px) scale(2, 0.5);
+  filter: blur(20px);
+}
+
+/* Subtitle Styles */
+.subtitle-text {
+  /* Initial animation state */
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  filter: blur(15px);
+}
+
+/* Alternative text color scheme - Uncomment to use */
+/*
+.title-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle-text {
+  color: #667eea;
+  opacity: 0.8;
+}
+*/
+

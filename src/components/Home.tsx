@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FC, useState } from "react";
 import bg from "@/../public/images/reel.gif";
+import VideoModal from "./videoModal/VideoModal";
 
 const HomeText: FC<{ lang: "ru" | "en" }> = ({ lang = "ru" }) => {
   const [loading, setLoading] = useState(true);
@@ -37,9 +38,8 @@ const HomeText: FC<{ lang: "ru" | "en" }> = ({ lang = "ru" }) => {
               Мы — продакшн полного цикла, готовый воплотить в жизнь самые
               смелые идеи
             </p>
-            <button className="w-full px-8 py-4 bg-white text-black text-xl lg:text-2xl 2xl:text-2xl font-sans mt-8 md:w-auto uppercase">
-              Смотреть шоурил
-            </button>
+
+            <VideoModal />
           </div>
         </div>
       </div>

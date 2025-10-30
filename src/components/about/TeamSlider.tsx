@@ -64,7 +64,7 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
       opacity: 0,
       scaleX: 2,
       scaleY: 0.5,
-      
+
       duration: 1,
       stagger: 0.1,
       ease: 'power2.in',
@@ -137,44 +137,45 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className='text-swiper-container'>
-        <Swiper
-          onSwiper={(swiper) => {
-            swiperSlider.current = swiper;
-          }}
-          spaceBetween={0}
-          slidesPerView={1}
-          allowTouchMove={false}
-          pagination={false}
-          navigation={false}
-          centeredSlides
-          speed={1400}
-          
-          onSlideChange={handleSlideChange}
-          className=' mt-10 text-scale-swiper'
-        >
-          {items.map((item, index) => (
-            <SwiperSlide
-              className='max-h-50 h-50 lg:max-h-80 lg:h-80 overflow-hidden cursor-pointer'
-              key={item.id}
-            >
-              <div className='slide-content'>
-                <div className='text-center'>
-                  <div
-                    // @ts-expect-error
-                    ref={(el) => (titleRefs.current[index] = el)}
-                  >
-                    <div className='text-2xl font-sans text-center'>
-                      {item.name}
+      {false && (
+        <div className='text-swiper-container'>
+          <Swiper
+            onSwiper={(swiper) => {
+              swiperSlider.current = swiper;
+            }}
+            spaceBetween={0}
+            slidesPerView={1}
+            allowTouchMove={false}
+            pagination={false}
+            navigation={false}
+            centeredSlides
+            speed={1400}
+            onSlideChange={handleSlideChange}
+            className=' mt-10 text-scale-swiper'
+          >
+            {items.map((item, index) => (
+              <SwiperSlide
+                className='max-h-50 h-50 lg:max-h-80 lg:h-80 overflow-hidden cursor-pointer'
+                key={item.id}
+              >
+                <div className='slide-content'>
+                  <div className='text-center'>
+                    <div
+                      // @ts-expect-error
+                      ref={(el) => (titleRefs.current[index] = el)}
+                    >
+                      <div className='text-2xl font-sans text-center'>
+                        {item.name}
+                      </div>
+                      <div className='text-lg text-center'>{item.post}</div>
                     </div>
-                    <div className='text-lg text-center'>{item.post}</div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
     </>
   );
 };

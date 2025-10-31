@@ -1,4 +1,5 @@
 import localFont from 'next/font/local';
+import { Play } from 'next/font/google';
 import '@/app/globals.css';
 
 const axiforma = localFont({
@@ -77,12 +78,16 @@ const axiforma = localFont({
   ],
 });
 
+const play = Play({
+  weight: ['400', '700'],
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap',
+})
+
 export default async function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html>
-      <body className={`${axiforma.variable} antialiased`}>
-        {children}
-      </body>
+      <body className={`${axiforma.variable} ${play.className} antialiased`}>{children}</body>
     </html>
   );
 }

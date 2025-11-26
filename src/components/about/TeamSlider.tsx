@@ -112,7 +112,7 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
           stretch: 0,
           depth: 150,
           modifier: 1,
-          slideShadows: true,
+          slideShadows: false,
         }}
         breakpoints={{
           0: { slidesPerView: 2.2 },
@@ -122,16 +122,16 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
       >
         {items.map((item) => (
           <SwiperSlide
-            className='max-h-50 h-50 lg:max-h-80 lg:h-80 overflow-hidden cursor-pointer'
+            className='max-h-auto h-auto lg:max-h-auto lg:h-auto overflow-hidden cursor-pointer'
             key={item.id}
           >
             <Image
               src={item.image}
               alt={item.name}
-              width={500}
-              height={400}
+              width={0}
+  height={0}
               placeholder='blur'
-              className='w-full h-full object-cover'
+              className='w-full h-full object-contain'
               priority={true}
             />
           </SwiperSlide>
@@ -155,7 +155,7 @@ const SwiperComponent = ({ items }: { items: TeamItem[] }) => {
           >
             {items.map((item, index) => (
               <SwiperSlide
-                className='max-h-50 h-50 lg:max-h-80 lg:h-80 overflow-hidden cursor-pointer'
+                className=' overflow-hidden cursor-pointer'
                 key={item.id}
               >
                 <div className='slide-content'>

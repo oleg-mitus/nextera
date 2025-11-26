@@ -1,6 +1,6 @@
-import team1 from "@/../public/team1.png";
-import team2 from "@/../public/team2.png";
-import team3 from "@/../public/team2.png";
+import team1 from "@/../public/profile1.jpg";
+import team2 from "@/../public/profile1.jpg";
+import team3 from "@/../public/profile1.jpg";
 import team4 from "@/../public/images/pngegg.png";
 
 const team = [

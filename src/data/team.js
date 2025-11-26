@@ -1,7 +1,7 @@
-import team1 from "@/../public/profile1.jpg";
-import team2 from "@/../public/profile1.jpg";
-import team3 from "@/../public/profile1.jpg";
-import team4 from "@/../public/images/pngegg.png";
+import team1 from "@/../public/images/profile1.png";
+import team2 from "@/../public/images/profile1.png";
+import team3 from "@/../public/images/profile1.png";
+import team4 from "@/../public/images/profile1.png";
 
 const team = [
   {
